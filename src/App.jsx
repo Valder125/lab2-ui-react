@@ -10,15 +10,13 @@ import Home from "./pages/Home";
 import Users from "./pages/Users";
 
 function App() {
-  // Стан для теми: 'light' або 'dark'
   const [mode, setMode] = useState("light");
 
-  // Створюємо тему MUI залежно від режиму
   const theme = useMemo(
     () =>
       createTheme({
         palette: {
-          mode, // 'light' або 'dark'
+          mode, 
         },
       }),
     [mode]
@@ -30,7 +28,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Скидає CSS і фарбує фон у темний/світлий колір */}
+      <CssBaseline /> {}
       <BrowserRouter>
         <AppBar position="static">
           <Toolbar>
@@ -44,7 +42,7 @@ function App() {
               Користувачі
             </Button>
             
-            {/* Кнопка перемикання теми (Завдання №3) */}
+            {}
             <Box sx={{ ml: 2 }}>
               <IconButton onClick={toggleTheme} color="inherit">
                 {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
